@@ -3,9 +3,14 @@ font-family: 'Prata', serif; */
 * {
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
+
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-padding-top: 5px;
 }
 
 body {
@@ -15,7 +20,8 @@ body {
 section {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .first {
@@ -50,7 +56,11 @@ i:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.navbar-expand-lg .navbar-collapse {
+.bg-white {
+  background: transparent !important;
+}
+
+.navbar-expand-sm .navbar-collapse {
   display: flex;
   justify-content: space-between;
 }
@@ -71,15 +81,14 @@ i:hover {
 }
 
 .background-shape {
-  min-width: 38rem;
+  min-width: 30rem;
   min-height: 44.5rem;
-  max-width: 38rem;
+  max-width: 30rem;
   max-height: 44.5rem;
-  margin: 5.4rem 2rem;
+  margin: 5.4rem 4rem;
   position: absolute;
   grid-column-start: first-col;
   grid-row-start: first-row;
-  justify-self: center;
 }
 
 .background-shape:before {
@@ -131,7 +140,7 @@ i {
   grid-row-start: first-row;
   width: 40rem;
   height: auto;
-  justify-self: center;
+  justify-self: flex-start;
 }
 
 .buttons {
@@ -195,6 +204,12 @@ i {
   transition: opacity ease-out 2.5s;
 }
 
+.background-box {
+  background: rgba(248, 196, 249, 0.1);
+  width: 100vw;
+  height: 99vh;
+}
+
 @media (max-width: 767px) {
   .row.hero {
     flex-direction: column-reverse;
@@ -209,22 +224,25 @@ i {
   }
 }
 
-/* .footer {
+@media (max-width: 533px) {
+  .row.hero {
+    padding: 0;
+  }
+}
+.footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 4rem;
+  height: 10rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-} */
-/* .footer-content {
-  padding: 0.5rem;
+}
+.footer-content {
+  padding: 1rem;
 }
 .footer-background {
-  background: rgba(247, 138, 241, 0.184);
-  width: 80%;
   text-align: center;
   border-radius: 4px;
-} */
+}
