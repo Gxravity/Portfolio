@@ -237,12 +237,4 @@ i {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.footer-content {
-  padding: 1rem;
-}
-.footer-background {
-  text-align: center;
-  border-radius: 4px;
 }
