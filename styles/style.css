@@ -131,7 +131,7 @@ li {
   justify-self: flex-start;
   border: 1px solid #74747427;
   border-radius: 0.5rem;
-  box-shadow: 50px -45px var(--primary-theme-color);
+  box-shadow: 50px -45px rgba(255, 194, 203, 0.2);
 }
 
 .colored-item {
