@@ -1,3 +1,13 @@
+:root {
+  --primary-gradient: linear-gradient(
+    179.4deg,
+    rgb(253, 240, 233) 2.2%,
+    rgb(255, 194, 203) 96.2%
+  );
+  --primary-text-color: #9c9c9c;
+  --primary-theme-color: rgb(255, 194, 203);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,10 +24,9 @@ body {
 }
 
 section {
-  height: 100vh;
+  padding-bottom: 50rem;
   display: flex;
   flex-direction: column;
-  margin: 0 10%;
   align-items: center;
 }
 
@@ -38,14 +47,10 @@ section {
   height: 100vh;
 }
 
-:root {
-  --primary-gradient: linear-gradient(
-    179.4deg,
-    rgb(253, 240, 233) 2.2%,
-    rgb(255, 194, 203) 96.2%
-  );
-  --primary-text-color: #9c9c9c;
-  --primary-theme-color: rgb(255, 194, 203);
+.links {
+  color: var(--primary-text-color);
+  border-bottom: 1px dashed #000;
+  text-decoration: none;
 }
 
 .icon:hover,
@@ -55,14 +60,15 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-.bg-white {
-  background: transparent !important;
-}
-
 .navbar-expand-sm .navbar-collapse {
   display: flex;
   justify-content: space-between;
   margin: 0 10%;
+}
+
+.nav-link {
+  text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 200ms;
 }
 
 .nav-link.active {
@@ -79,25 +85,10 @@ section {
   border-image: var(--primary-gradient);
   border-image-slice: 1;
 }
-/* .background-shape:before {
-  background: var(--primary-gradient);
-  border-radius: 1rem 1rem 1rem 1rem;
-  bottom: 0;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.5;
-  z-index: -1;
-} */
 
 .row.hero {
-  display: flex;
-  padding: 10rem 0;
-  align-items: flex-end;
+  padding-top: 20rem;
 }
-
 .name {
   font-family: Prata;
   font-size: 4rem;
@@ -108,6 +99,7 @@ section {
 .nav-item,
 .btn-lg,
 .footer-content,
+.text,
 i,
 li {
   font-size: 1.6rem !important;
@@ -115,17 +107,12 @@ li {
 }
 
 .info-text,
-.links {
+.links,
+.text {
   opacity: 0.7;
 }
-.profile-section {
-  display: grid;
-  grid-template-columns: [first-col] 100%;
-  grid-template-rows: [first-row] 300px;
-}
+
 .profile-picture {
-  grid-column-start: first-col;
-  grid-row-start: first-row;
   width: 42rem;
   height: auto;
   justify-self: flex-start;
@@ -134,55 +121,39 @@ li {
   box-shadow: 50px -45px rgba(255, 194, 203, 0.2);
 }
 
-.colored-item {
-  color: #f5ec76;
+.button-text {
+  color: #000;
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  justify-content: flex-start;
+.button-text:hover {
+  color: #fef0f2;
 }
 
 .button-one,
 .button-two {
   border-radius: 0.5rem;
-  color: #000;
   padding: 2.1rem 3.5rem;
   margin: 1rem 1rem 0 0;
-  text-align: center;
   border-image-source: var(--primary-gradient);
   border-image-slice: 1;
   border: 1px solid #fde1ee;
   border-bottom: 1px solid var(--primary-theme-color);
   transition: text-decoration-color 200ms;
-  text-decoration: none;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .button-one {
   background: var(--primary-gradient);
 }
 
-.button-one:hover {
-  color: #fff;
+.button-two {
+  background: transparent;
 }
 
 .button-one:hover,
 .button-two:hover {
   opacity: 1;
-  line-height: 1.4;
-  cursor: pointer;
-}
-
-.button-two:hover {
-  color: #fde1ee;
-}
-
-.nav-link {
-  text-decoration: underline 0.15em rgba(255, 255, 255, 0);
-  transition: text-decoration-color 200ms;
+  line-height: 1.45;
 }
 
 .hidden {
@@ -220,25 +191,33 @@ li {
   list-style: none;
 }
 
-.links {
-  color: #000;
-  border-bottom: 1px dashed black;
-  text-decoration: none;
+.colored-item {
+  color: #f8ed28;
 }
 
 .about-container {
   padding: 2rem 5rem;
 }
+
+.text {
+  max-width: 70vw;
+}
+
 #about,
-#portfolio {
+#portfolio,
+#contact {
   border-bottom: solid 0.01rem rgba(255, 165, 183, 0.798);
+}
+
+.card {
+  padding: 1rem;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
   .row.hero {
     flex-direction: column-reverse;
     justify-content: space-around;
-    gap: 20rem;
   }
   .description {
     text-align: center;
@@ -249,7 +228,38 @@ li {
 }
 
 @media (max-width: 533px) {
+  section.first,
+  .third,
+  .fourth {
+    padding: 0 0 0 2rem;
+  }
+
+  section {
+    padding-bottom: 10vh;
+  }
+
   .row.hero {
-    padding: 0;
+    padding-top: 5vh;
+    gap: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  section {
+    margin-top: 10vh;
+  }
+}
+
+@media (max-width: 769px) {
+  .info-text,
+  .nav-item,
+  .btn-lg,
+  .footer-content,
+  i,
+  li {
+    font-size: 2.5vw !important;
+    font-family: Gelasio;
   }
 }
