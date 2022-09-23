@@ -124,6 +124,8 @@ li {
 .profile-picture {
   max-height: 70vh;
   height: auto;
+  border: 1px solid rgba(255, 194, 203, 0.664);
+  border-radius: 0.5rem;
 }
 
 .profile-section {
