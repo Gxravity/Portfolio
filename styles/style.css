@@ -20,14 +20,12 @@ html {
 
 body {
   min-height: 100vh;
+  max-width: 100%;
   background: url(../images/bg5.png) no-repeat fixed 100% 100%;
 }
 
 section {
   padding-bottom: 50rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .first {
@@ -44,6 +42,7 @@ section {
 
 .container {
   margin: 0;
+  max-width: 100%;
   height: 100vh;
 }
 
@@ -53,7 +52,11 @@ section {
   text-decoration: none;
 }
 #about {
-  scroll-margin-top: 20rem;
+  scroll-margin-top: 14vh;
+}
+
+#contact {
+  scroll-margin-top: 14vh;
 }
 .icon:hover,
 .links:hover {
@@ -89,8 +92,12 @@ section {
 }
 
 .row.hero {
-  padding-top: 20rem;
+  display: flex;
+  padding-top: 15rem;
+  align-items: center;
+  margin: 0 10vw;
 }
+
 .name {
   font-family: Prata;
   font-size: 4rem;
@@ -115,12 +122,13 @@ li {
 }
 
 .profile-picture {
-  width: 42rem;
+  max-height: 70vh;
   height: auto;
-  justify-self: flex-start;
-  border: 1px solid #74747427;
-  border-radius: 0.5rem;
-  box-shadow: 50px -45px rgba(255, 194, 203, 0.2);
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
 }
 
 .button-text {
@@ -179,6 +187,11 @@ li {
   justify-content: center;
 }
 
+.third {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -198,17 +211,13 @@ li {
 }
 
 .about-container {
-  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10vw;
 }
 
 .text {
-  max-width: 70vw;
-}
-
-#about,
-#portfolio,
-#contact {
-  border-bottom: solid 0.01rem rgba(255, 165, 183, 0.798);
+  max-width: 100%;
 }
 
 .card {
@@ -230,14 +239,8 @@ li {
 }
 
 @media (max-width: 533px) {
-  section.first,
-  .third,
-  .fourth {
-    padding: 0 0 0 2rem;
-  }
-
   section {
-    padding-bottom: 10vh;
+    padding-bottom: 1vh;
   }
 
   .row.hero {
@@ -263,5 +266,13 @@ li {
   li {
     font-size: 2.5vw !important;
     font-family: Gelasio;
+  }
+}
+
+@media (min-width: 770px) {
+  .profile-picture {
+    border: 1px solid #74747427;
+    border-radius: 0.5rem;
+    box-shadow: 50px -45px rgba(255, 194, 203, 0.2);
   }
 }
